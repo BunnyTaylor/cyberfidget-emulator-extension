@@ -1,0 +1,57 @@
+{
+  "name": "cyberfidget-emulator-extension",
+  "displayName": "CyberFidget Emulator",
+  "description": "128x64 OLED emulator for CyberFidget apps",
+  "version": "0.1.1",
+  "publisher": "BunnyTaylor",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BunnyTaylor/cyberfidget-emulator-extension.git"
+  },
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "cyberfidget-panel",
+          "title": "CyberFidget Emulator",
+          "icon": "media/cyberfidget-icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "cyberfidget-panel": [
+        {
+          "type": "webview",
+          "id": "cyberfidget.emulatorView",
+          "name": "Emulator"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "cyberfidget.openEmulator",
+        "title": "CyberFidget: Open Emulator"
+      }
+    ]
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/node": "^25.6.2",
+    "@types/vscode": "^1.80.0",
+    "@vscode/vsce": "^3.9.1",
+    "typescript": "^6.0.3"
+  },
+  "icon": "media/icon-128.png"
+}
